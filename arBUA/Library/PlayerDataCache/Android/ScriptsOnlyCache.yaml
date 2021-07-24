@@ -1037,4 +1037,4 @@ ScriptsOnlyBuild:
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
   - Assets/Scenes/Augmented.unity
-  playerPath: C:/Users/irene/Desktop/arBUA/Build/arBUA.apk
+  playerPath: C:/Users/irene/Desktop/arBUA-git/arBUA/Build/arBUA.apk

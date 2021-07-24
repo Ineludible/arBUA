@@ -248,7 +248,7 @@ PlayerSettings:
   templateDefaultScene: Assets/Scenes/SampleScene.unity
   AndroidTargetArchitectures: 1
   AndroidSplashScreenScale: 2
-  androidSplashScreen: {fileID: 2800000, guid: 209563986116240d6aaec5a6fb7786a7, type: 3}
+  androidSplashScreen: {fileID: 2800000, guid: 6d05d91d288ff7b468ff5f59e5926d89, type: 3}
   AndroidKeystoreName: 
   AndroidKeyaliasName: 
   AndroidBuildApkPerCpuArchitecture: 0
