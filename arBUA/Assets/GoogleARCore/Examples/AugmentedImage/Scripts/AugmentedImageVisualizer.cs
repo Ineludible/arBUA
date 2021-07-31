@@ -64,16 +64,13 @@ namespace GoogleARCore.Examples.AugmentedImage
 
         public GameObject final;
 
+        //Pantallas menu navegacion
         public Canvas screen1;
         public Canvas screen2;
+        public Canvas screen3;
+        public Canvas UI;
 
-        /// Mio
-        /// 
 
-        public RawImage rawImage;
-
-        public Button b1_policien;
-     
         private int activo1 = 1;
         private int activo2 = 0;
         private int activo3 = 0;
@@ -89,6 +86,21 @@ namespace GoogleARCore.Examples.AugmentedImage
         {
             activo1 = 0;
             activo2 = 0;
+            activo3 = 1;
+        }
+
+
+        public void activar3()
+        {
+            activo1 = 0;
+            activo2 = 0;
+            activo3 = 0;
+        }
+
+        public void volver()
+        {
+            activo1 = 1;
+            activo2 = 0;
             activo3 = 0;
         }
 
@@ -102,21 +114,27 @@ namespace GoogleARCore.Examples.AugmentedImage
 
             //Si no se ha escaneado la imagen todavia o no se ha activado la realidad aumentada
             //deben permanecer ocultos los objetos 3d del camino
-            if (Image == null || Image.TrackingState != TrackingState.Tracking || activo1==1 || activo2==1)
+            if (Image == null || Image.TrackingState != TrackingState.Tracking || activo1==1 || activo2==1 || activo3==1)
             {
                 if (activo1 == 1)
                 {
-                    b1_policien.gameObject.SetActive(true);
-                    rawImage.gameObject.SetActive(true);
+                    screen1.gameObject.SetActive(true);
                     screen2.gameObject.SetActive(false);
+                    screen3.gameObject.SetActive(false);
                 } else if (activo2 == 1)
                 {
                     screen1.gameObject.SetActive(false);
                     screen2.gameObject.SetActive(true);
+                    screen3.gameObject.SetActive(false);
+                } else if(activo3 == 1)
+                {
+                    screen1.gameObject.SetActive(false);
+                    screen2.gameObject.SetActive(false);
+                    screen3.gameObject.SetActive(true);
                 }
 
                 RA.SetActive(false);
-
+                UI.gameObject.SetActive(false);
                 return;
             } 
                 arrow1.transform.position = new Vector3(0f, 0f, 0.500f);
@@ -125,11 +143,11 @@ namespace GoogleARCore.Examples.AugmentedImage
                 arrow4.transform.position = new Vector3(0f, 0.3f, 3f);
                 final.transform.position = new Vector3(0f, 0.4f, 4f);
 
-
+                UI.gameObject.SetActive(true);
                 RA.SetActive(true);
                 screen1.gameObject.SetActive(false);
                 screen2.gameObject.SetActive(false);
-           
+                screen3.gameObject.SetActive(false);
 
         }
     }
